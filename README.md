@@ -163,13 +163,32 @@ python -m multi_agent.main
 By default, a sample of participants is taken from the mock data. The maximum number of random participants can be changed by modifying the `MAX_PARTICIPANTS` constant in `main.py`.  
 If you want to specify exactly which participants to use, you can list them in the `PARTICIPANTS` constant in the same file.
 
-**Configuration Constants:**  
-The `main.py` script contains several configuration constants that control the system’s behavior, such as:
-- `MAX_PARTICIPANTS`: The maximum number of participants to randomly select from the mock data.
-- `PARTICIPANTS`: A list of participant names to use directly (overrides random selection if set).
-- (Other constants as defined in your script, e.g., meeting duration, time slots, etc.)
+### Configuration Constants in `main.py`
 
-These constants allow you to easily customize the scheduling scenario without modifying the core logic.
+- **MODEL_BASE_URL**:  
+  The base URL for the local LLM API. Default is `"http://127.0.0.1:1234/v1"`.
+
+- **MODEL_NAME**:  
+  The name of the LLM model to use. Default is `"mistral-nemo-instruct-2407"`.
+
+- **API_KEY**:  
+  API key for the LLM service. Set to `'not-use'` since a local model is used and no key is required.
+
+- **MAX_PARTICIPANTS**:  
+  The maximum number of participants to randomly select from the mock data. Change this value to increase or decrease the number of participants in the scheduling scenario.
+
+- **SCHEDULE_DATE**:  
+  The date for which the meeting is being scheduled. Default is `'2025-07-22'`.
+
+- **PARTICIPANTS**:  
+  The list of participants to use. By default, this is set by calling `get_random_participants(max_number=MAX_PARTICIPANTS)`, which selects a random sample from the mock data.  
+  If you want to specify participants manually, you can set this to a list of participant names, e.g.:
+  ```python
+  PARTICIPANTS = ["Person_1", "Person_2", "Person_3"]
+  ```
+
+- **MAX_NEGOTIATION_ROUNDS**:  
+  The maximum number of negotiation rounds allowed between agents when trying to find a suitable meeting time.
 
 ---
 
