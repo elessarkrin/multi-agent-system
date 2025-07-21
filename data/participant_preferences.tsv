@@ -1,0 +1,21 @@
+person	no_meetings_before	no_meetings_after	prefer_morning	prefer_afternoon	avoid_lunch_time	max_meetings_per_day	preferred_max_duration
+Person_1	09:00	17:00	True	False	False	4.0	45.0
+Person_2							
+Person_3	08:00	17:00					
+Person_4	10				False	2.0	30.0
+Person_5						7.0	15.0
+Person_6		16	False	True	False		30.0
+Person_7		19	False	True			45.0
+Person_8			True	False			45.0
+Person_9	08:00		True	False	True		
+Person_10		16	True	False	False		30.0
+Person_11	08:00	18:00			False		60.0
+Person_12	08:00	17:00	False	True	False		
+Person_13	10	16			True	3.0	45.0
+Person_14	10:00	16:00	True	False		7.0	
+Person_15	9	17:00			True	10.0	30.0
+Person_16	9	18	True	False	True	8.0	
+Person_17			True	False	True		
+Person_18	08:00	17:00			False	5.0	120.0
+Person_19	08:00		True	False		8.0
+Person_20	08:00	17	False	True		5.0	30.0

@@ -1,0 +1,26 @@
+services:
+  model-downloader:
+    image: python:3.10-slim
+    volumes:
+      - ./models:/models
+    entrypoint: >
+      sh -c "
+        pip install huggingface_hub &&
+        huggingface-cli download lmstudio-community/Mistral-Nemo-Instruct-2407-GGUF --include 'Mistral-Nemo-Instruct-2407-Q4_K_M.gguf' --local-dir /models
+      "
+    # This container will exit after downloading
+  llama-server:
+    image: ghcr.io/ggml-org/llama.cpp:server
+    ports:
+      - "1234:1234"
+    volumes:
+      - ./models:/models
+    command: >
+      -m /models/Mistral-Nemo-Instruct-2407-Q4_K_M.gguf
+      --port 1234
+      --host 0.0.0.0
+      -n 512
+    tty: true
+    stdin_open: true
+    depends_on:
+      - model-downloader

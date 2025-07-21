@@ -1,0 +1,15 @@
+[project]
+name = "multi-agent-system"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "elessarkrin", email = "e.raizen@gmail.com"},
+]
+dependencies = ["pandas>=2.3.1", "pydantic>=2.11.7", "autogen-agentchat>=0.6.4", "autogen-ext[openai]>=0.6.4"]
+requires-python = "==3.13.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
