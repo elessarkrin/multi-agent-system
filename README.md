@@ -118,8 +118,8 @@ docker run hello-world
 
 ### 1. Clone and Enter the Repository
 ```bash
-git clone <your-repo-url>
-cd MultiAgentSystem
+git clone https://github.com/elessarkrin/multi-agent-system.git
+cd multi-agent-system
 ```
 ### 2. Make Setup Script Executable
 ```bash
@@ -159,6 +159,18 @@ To run this project, execute the `main.py` script directly. This is the entry po
 python -m multi_agent.main
 ```
 
+**Participant Selection:**  
+By default, a sample of participants is taken from the mock data. The maximum number of random participants can be changed by modifying the `MAX_PARTICIPANTS` constant in `main.py`.  
+If you want to specify exactly which participants to use, you can list them in the `PARTICIPANTS` constant in the same file.
+
+**Configuration Constants:**  
+The `main.py` script contains several configuration constants that control the system’s behavior, such as:
+- `MAX_PARTICIPANTS`: The maximum number of participants to randomly select from the mock data.
+- `PARTICIPANTS`: A list of participant names to use directly (overrides random selection if set).
+- (Other constants as defined in your script, e.g., meeting duration, time slots, etc.)
+
+These constants allow you to easily customize the scheduling scenario without modifying the core logic.
+
 ---
 
 ## Project Overview
@@ -196,7 +208,7 @@ Although the initial design considered using a Large Language Model (LLM) for ag
 ## Project Structure
 
 ``` 
-MultiAgentSystem/
+multi-agent-syste/
 ├── multi_agent/    # Core application code
 │   ├── agents/    # Agent implementations
 │   │   ├── schedule_analyst.py    # Calendar analysis agent
