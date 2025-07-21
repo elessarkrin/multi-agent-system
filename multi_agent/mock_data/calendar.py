@@ -2,7 +2,7 @@ from typing import Union
 
 import pandas as pd
 
-__calendars = pd.read_csv('../data/calendar_data.tsv', sep='\t')
+__calendars = pd.read_csv('data/calendar_data.tsv', sep='\t')
 
 
 def get_person_calendar(person_name: Union[int, str], start_date=None, end_date=None) -> pd.DataFrame:

@@ -43,7 +43,7 @@ def load_preferences(tsv_file: str) -> dict[str, ParticipantPreferences]:
 
     return preferences_dict
 
-__preferences = load_preferences(tsv_file='../data/participant_preferences.tsv')
+__preferences = load_preferences(tsv_file='data/participant_preferences.tsv')
 
 def get_preference(name: str) -> ParticipantPreferences:
     """
